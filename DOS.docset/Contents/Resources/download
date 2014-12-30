@@ -1,0 +1,10 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+rm -rf Documents ss64.com
+wget --recursive \
+     --convert-links \
+     --page-requisites \
+     --no-parent \
+     http://ss64.com/nt/
+
+mv -fv ss64.com Documents

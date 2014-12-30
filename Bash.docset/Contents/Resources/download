@@ -1,0 +1,7 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N http://www.gnu.org/software/bash/manual/bash.html_node.tar.gz
+rm -rf Documents
+mkdir -v Documents
+tar -xvf bash.html_node.tar.gz -C Documents
+rm -fv bash.html_node.tar.gz

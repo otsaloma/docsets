@@ -1,0 +1,7 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N http://www.gnu.org/software/emacs/manual/elisp.html_node.tar.gz
+rm -rf Documents elisp
+tar -xvf elisp.html_node.tar.gz
+mv -v elisp Documents
+rm -fv elisp.html_node.tar.gz

@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+rm -rf Documents
+mkdir -v Documents
+mv -fv Reference Documents

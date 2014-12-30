@@ -1,0 +1,23 @@
+
+/* Append to Documents/sailfish-silica/assets/css/style-sdk.less */
+
+body {
+  font-family: "Open Sans",sans-serif !important;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.container {
+  max-width: 72em;
+  width: 95%;
+}
+
+li {
+  line-height: 26px;
+}
+
+table.qmlname span.name {
+  font-family: Inconsolata,monospace;
+  font-size: 24px;
+  font-weight: 400;
+}

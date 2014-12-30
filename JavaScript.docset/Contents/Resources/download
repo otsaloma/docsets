@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N https://developer.mozilla.org/en-US/docs/Web/JavaScript/Index
+rm -rf Documents
+mkdir -v Documents
+mv -fv Index Documents

@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N http://svn.gna.org/viewcvs/*checkout*/latexrefman/trunk/latex2e.html
+rm -rf Documents
+mkdir -v Documents
+mv -v latex2e.html Documents

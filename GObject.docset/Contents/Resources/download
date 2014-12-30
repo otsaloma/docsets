@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N https://developer.gnome.org/gobject/stable/api-index-full.html
+rm -rf Documents
+mkdir -v Documents
+mv -fv api-index-full.html Documents

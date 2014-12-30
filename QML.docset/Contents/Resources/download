@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")"
+wget -N http://doc.qt.io/qt-5/qmltypes.html
+rm -rf Documents
+mkdir -v Documents
+mv -fv qmltypes.html Documents

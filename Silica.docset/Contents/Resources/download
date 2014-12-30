@@ -1,0 +1,19 @@
+#!/bin/sh
+# XXX: wget seems to have trouble uncompressing gzipped HTML.
+# The below call partially succeeds and fails very randomly.
+cd "$(dirname "$0")"
+rm -rf Documents sailfishos.org
+wget --recursive \
+     --convert-links \
+     --page-requisites \
+     --no-parent \
+     --no-check-certificate \
+     https://sailfishos.org/sailfish-silica/
+
+mv -fv sailfishos.org Documents
+BASE=Documents/sailfish-silica/sailfish-original
+[ -d $BASE ] || mkdir $BASE
+wget --no-check-certificate \
+     --directory-prefix=$BASE \
+     https://sailfishos.org/sailfish-silica/sailfish-original/sailfish-site-bg.jpg \
+     https://sailfishos.org/sailfish-silica/sailfish-original/sailfish-site-bg_med.jpg
