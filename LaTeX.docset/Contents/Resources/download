@@ -1,6 +1,6 @@
 #!/bin/sh
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 wget -N http://svn.gna.org/viewcvs/*checkout*/latexrefman/trunk/latex2e.html
-rm -rf Documents
+mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
 mv -v latex2e.html Documents

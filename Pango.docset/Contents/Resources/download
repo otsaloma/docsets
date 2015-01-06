@@ -1,6 +1,6 @@
 #!/bin/sh
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 wget -N https://developer.gnome.org/pango/stable/api-index-full.html
-rm -rf Documents
+mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
 mv -fv api-index-full.html Documents

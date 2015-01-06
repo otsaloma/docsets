@@ -1,6 +1,6 @@
 #!/bin/sh
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 wget -N https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
-rm -rf Documents
+mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
 mv -fv Reference Documents

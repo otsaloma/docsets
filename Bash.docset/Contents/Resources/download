@@ -1,7 +1,7 @@
 #!/bin/sh
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 wget -N http://www.gnu.org/software/bash/manual/bash.html_node.tar.gz
-rm -rf Documents
+mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
 tar -xvf bash.html_node.tar.gz -C Documents
 rm -fv bash.html_node.tar.gz

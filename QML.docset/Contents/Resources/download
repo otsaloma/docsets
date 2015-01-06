@@ -1,6 +1,6 @@
 #!/bin/sh
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 wget -N http://doc.qt.io/qt-5/qmltypes.html
-rm -rf Documents
+mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
 mv -fv qmltypes.html Documents
