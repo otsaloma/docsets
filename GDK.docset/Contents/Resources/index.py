@@ -9,7 +9,8 @@ cursor.execute("CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type
 cursor.execute("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);")
 root = "https://developer.gnome.org/gdk3/stable/"
 for fname in ("api-index-full.html",):
-    page = open(os.path.join("Documents", fname)).read()
+    path = os.path.join("Documents", fname)
+    page = open(path, encoding="utf_8", errors="ignore").read()
     soup = bs4.BeautifulSoup(page)
     for tag in soup.find_all("a", {"href": re.compile("^[^/]+#[^/]+$")}):
         name = tag.text.strip()

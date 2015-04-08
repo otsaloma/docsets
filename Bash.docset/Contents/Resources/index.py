@@ -11,7 +11,8 @@ for fname in ("Builtin-Index.html",
               "Reserved-Word-Index.html",
               "Variable-Index.html"):
 
-    page = open(os.path.join("Documents", fname)).read()
+    path = os.path.join("Documents", fname)
+    page = open(path, encoding="utf_8", errors="ignore").read()
     soup = bs4.BeautifulSoup(page)
     for tag in soup.find_all("a", {"href": re.compile("#index-")}):
         name = tag.text.strip()

@@ -9,7 +9,7 @@ cursor.execute("CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type
 cursor.execute("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);")
 # Types.
 for fname in glob.glob("Documents/sailfish-silica/sailfish-silica-all.html"):
-    page = open(fname).read()
+    page = open(fname, encoding="utf_8", errors="ignore").read()
     soup = bs4.BeautifulSoup(page)
     for tag in soup.find_all("a", {"href": re.compile("qml-.*html")}):
         name = tag.text.strip()
@@ -23,7 +23,7 @@ for fname in glob.glob("Documents/sailfish-silica/sailfish-silica-all.html"):
 # Properties, signals and methods.
 for fname in glob.glob("Documents/sailfish-silica/qml-*.html"):
     if fname.endswith("-members.html"): continue
-    page = open(fname).read()
+    page = open(fname, encoding="utf_8", errors="ignore").read()
     soup = bs4.BeautifulSoup(page)
     title = soup.find_all("h1")[0].text.strip()
     for tag in soup.find_all("a", {"href": re.compile("-(prop|method|signal)")}):
