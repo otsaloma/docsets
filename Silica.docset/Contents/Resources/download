@@ -1,6 +1,4 @@
 #!/bin/sh
-# XXX: wget seems to have trouble uncompressing gzipped HTML.
-# The below call partially succeeds and fails very randomly.
 cd "$(dirname "$0")" || exit 1
 mv -fv Documents Documents.bak$(date +%s)
 rm -rf sailfishos.org
@@ -9,12 +7,11 @@ wget --recursive \
      --page-requisites \
      --no-parent \
      --no-check-certificate \
-     https://sailfishos.org/sailfish-silica/
+     https://sailfishos.org/develop/docs/silica/
 
 mv -fv sailfishos.org Documents
-BASE=Documents/sailfish-silica/sailfish-original
-[ -d $BASE ] || mkdir $BASE
-wget --no-check-certificate \
-     --directory-prefix=$BASE \
-     https://sailfishos.org/sailfish-silica/sailfish-original/sailfish-site-bg.jpg \
-     https://sailfishos.org/sailfish-silica/sailfish-original/sailfish-site-bg_med.jpg
+# Rename files that have traces of URL parameters.
+for X in $(find Documents | grep "?"); do
+    Y="$(echo "$X" | sed "s/\?.*$//")"
+    mv -fv "$X" "$Y"
+done
