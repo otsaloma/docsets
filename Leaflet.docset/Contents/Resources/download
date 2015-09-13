@@ -2,7 +2,7 @@
 cd "$(dirname "$0")" || exit 1
 # XXX: wget doesn't pull dynamically generated tr ids.
 # As a workaround save manually from a web inspector.
-wget -N http://leafletjs.com/reference.html
-mv -fv Documents Documents.bak$(date +%s)
-mkdir -v Documents
-mv -fv reference.html Documents
+# wget -N http://leafletjs.com/reference.html
+# mv -fv Documents Documents.bak$(date +%s)
+# mkdir -v Documents
+# mv -fv reference.html Documents

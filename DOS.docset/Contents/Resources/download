@@ -1,11 +1,6 @@
 #!/bin/sh
 cd "$(dirname "$0")" || exit 1
+wget -N http://ss64.com/nt/index.html
 mv -fv Documents Documents.bak$(date +%s)
-rm -rf ss64.com
-wget --recursive \
-     --convert-links \
-     --page-requisites \
-     --no-parent \
-     http://ss64.com/nt/
-
-mv -fv ss64.com Documents
+mkdir -v Documents
+mv -fv index.html Documents

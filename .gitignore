@@ -1,3 +1,4 @@
+*.tar.*
 */Contents/Resources/docSet.dsidx
-*/Contents/Resources/Documents/*
 */Contents/Resources/Documents.bak*/*
+*/Contents/Resources/Documents/*

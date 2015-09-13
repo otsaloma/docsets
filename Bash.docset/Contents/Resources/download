@@ -1,7 +1,8 @@
 #!/bin/sh
 cd "$(dirname "$0")" || exit 1
-wget -N http://www.gnu.org/software/bash/manual/bash.html_node.tar.gz
+wget -N http://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html
+wget -N http://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html
+wget -N http://www.gnu.org/software/bash/manual/html_node/Variable-Index.html
 mv -fv Documents Documents.bak$(date +%s)
 mkdir -v Documents
-tar -xvf bash.html_node.tar.gz -C Documents
-rm -fv bash.html_node.tar.gz
+mv -fv *.html Documents
