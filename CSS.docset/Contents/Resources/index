@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import bs4, glob, os, re, sqlite3
-os.chdir(os.path.dirname(__file__))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 if os.path.isfile("docSet.dsidx"):
     os.remove("docSet.dsidx")
 db = sqlite3.connect("docSet.dsidx")
