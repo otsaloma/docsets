@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-import bs4, glob, os, re, sqlite3
+import bs4, os, re, sqlite3, time, urllib.request
+def soup_from_url(url):
+    print("Parsing {}".format(url))
+    page = urllib.request.urlopen(url).read()
+    return bs4.BeautifulSoup(page, "html.parser")
+def get_hrefs(soup, pattern):
+    return soup.find_all("a", {"href": re.compile(pattern)})
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 if os.path.isfile("docSet.dsidx"):
     os.remove("docSet.dsidx")
@@ -7,35 +13,26 @@ db = sqlite3.connect("docSet.dsidx")
 cursor = db.cursor()
 cursor.execute("CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);")
 cursor.execute("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);")
-# Types
-for fname in glob.glob("Documents/develop/docs/silica/sailfish-silica-all.html"):
-    page = open(fname, encoding="utf_8", errors="ignore").read()
-    soup = bs4.BeautifulSoup(page)
-    for tag in soup.find_all("a", {"href": re.compile("qml-.*html")}):
-        name = tag.text.strip()
-        if not name: continue
-        path = tag.attrs["href"].strip()
-        path = "develop/docs/silica/{}".format(path)
+soup = soup_from_url("https://sailfishos.org/develop/docs/silica/sailfish-silica-all.html")
+root = "https://sailfishos.org/develop/docs/silica/"
+sql = "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)"
+added = []
+for tag in get_hrefs(soup, "qml-.*html"):
+    name = tag.text.strip()
+    path = root + tag.attrs["href"].strip()
+    if not (name, path) in added:
         print("{}: {}".format(name, path))
-        cursor.execute("INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)",
-                       (name, "func", path))
-
-# Properties, signals and methods
-for fname in glob.glob("Documents/develop/docs/silica/qml-*.html"):
-    if fname.endswith("-members.html"): continue
-    page = open(fname, encoding="utf_8", errors="ignore").read()
-    soup = bs4.BeautifulSoup(page)
-    title = soup.find_all("h1")[0].text.strip()
-    for tag in soup.find_all("a", {"href": re.compile("-(prop|method|signal)")}):
-        name = tag.text.strip()
-        if not name: continue
-        if name.find("::") > 0: continue
-        name = ".".join((title, name))
-        path = tag.attrs["href"].strip()
-        path = "develop/docs/silica/{}".format(path)
-        print("{}: {}".format(name, path))
-        cursor.execute("INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)",
-                       (name, "func", path))
-
+        cursor.execute(sql, (name, "func", path))
+        added.append((name, path))
+    soup = soup_from_url(path)
+    for tag in get_hrefs(soup, "-(prop|method)$"):
+        fullname = ".".join((name, tag.text.strip()))
+        fullpath = root + tag.attrs["href"].strip()
+        if not fullpath.startswith(path): continue
+        if not ((fullname, fullpath)) in added:
+            print("{}: {}".format(fullname, fullpath))
+            cursor.execute(sql, (fullname, "func", fullpath))
+            added.append((fullname, fullpath))
+    time.sleep(1)
 db.commit()
 db.close()
