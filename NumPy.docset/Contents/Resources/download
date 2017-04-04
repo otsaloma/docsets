@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")" || exit 1
+wget -N https://docs.scipy.org/doc/numpy/genindex.html
+mv -fv Documents Documents.bak$(date +%s)
+mkdir -v Documents
+mv -fv genindex.html Documents
