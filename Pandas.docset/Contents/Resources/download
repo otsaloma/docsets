@@ -1,6 +1,3 @@
 #!/bin/sh
-cd "$(dirname "$0")" || exit 1
+cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
 wget -N http://pandas.pydata.org/pandas-docs/stable/genindex.html
-mv -fv Documents Documents.bak$(date +%s)
-mkdir -v Documents
-mv -fv genindex.html Documents

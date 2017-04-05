@@ -1,8 +1,5 @@
 #!/bin/sh
-cd "$(dirname "$0")" || exit 1
-wget -N http://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html
-wget -N http://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html
-wget -N http://www.gnu.org/software/bash/manual/html_node/Variable-Index.html
-mv -fv Documents Documents.bak$(date +%s)
-mkdir -v Documents
-mv -fv *.html Documents
+cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
+wget -N https://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html
+wget -N https://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html
+wget -N https://www.gnu.org/software/bash/manual/html_node/Variable-Index.html

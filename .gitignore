@@ -1,4 +1,3 @@
-*.tar.*
 */Contents/Resources/docSet.dsidx
-*/Contents/Resources/Documents.bak*/*
-*/Contents/Resources/Documents/*
+*/Contents/Resources/Documents
+__pycache__

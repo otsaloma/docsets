@@ -1,41 +1,26 @@
 #!/usr/bin/env python3
-import bs4, os, re, sqlite3, time, urllib.request
-def soup_from_url(url):
-    print("Parsing {}".format(url))
-    page = urllib.request.urlopen(url).read()
-    return bs4.BeautifulSoup(page, "html.parser")
-def get_hrefs(soup, pattern):
-    return soup.find_all("a", {"href": re.compile(pattern)})
+import os, re, sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-if os.path.isfile("docSet.dsidx"):
-    os.remove("docSet.dsidx")
-db = sqlite3.connect("docSet.dsidx")
-cursor = db.cursor()
-cursor.execute("CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);")
-cursor.execute("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);")
-soup = soup_from_url("http://doc.qt.io/qt-5/qmltypes.html")
-root = "http://doc.qt.io/qt-5/"
-sql = "INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)"
+sys.path.insert(0, os.path.join("..", "..", "..", ".."))
+import docsets
+db = docsets.create_database()
 added = []
-for tag in get_hrefs(soup, "qml-.*html"):
+root = "https://doc.qt.io/qt-5/"
+soup = docsets.soup_from_url("https://doc.qt.io/qt-5/qmltypes.html")
+for tag in soup.find_all("a", dict(href=re.compile("qml-.*html"))):
     name = tag.text.strip()
     # QtQuickControls2 available only since Qt 5.7.
     if name.endswith(": QtQuickControls2"): continue
     name = name.replace(": QtQuickControls", "")
     path = root + tag.attrs["href"].strip()
     if not (name, path) in added:
-        print("{}: {}".format(name, path))
-        cursor.execute(sql, (name, "func", path))
+        docsets.insert(db, name, "func", path)
         added.append((name, path))
-    soup = soup_from_url(path)
-    for tag in get_hrefs(soup, "-(prop|method)$"):
+    soup = docsets.soup_from_url(path)
+    for tag in soup.find_all("a", dict(href=re.compile("-(prop|method)$"))):
         fullname = ".".join((name, tag.text.strip()))
         fullpath = root + tag.attrs["href"].strip()
         if not fullpath.startswith(path): continue
-        if not ((fullname, fullpath)) in added:
-            print("{}: {}".format(fullname, fullpath))
-            cursor.execute(sql, (fullname, "func", fullpath))
+        if not (fullname, fullpath) in added:
+            docsets.insert(db, fullname, "func", fullpath)
             added.append((fullname, fullpath))
-    time.sleep(1)
-db.commit()
-db.close()

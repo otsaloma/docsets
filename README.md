@@ -9,7 +9,5 @@ applications that support the docset format.
 [1]: https://kapeli.com/docsets
 [2]: https://github.com/areina/helm-dash
 
-To generate these docsets, you'll need `tar`, `wget`, Python 3, and
-[Beautiful Soup 4][3].
-
-[3]: https://www.crummy.com/software/BeautifulSoup/
+To generate these docsets, you'll need Wget, Python 3, Requests and
+Beautiful Soup 4 (bs4).

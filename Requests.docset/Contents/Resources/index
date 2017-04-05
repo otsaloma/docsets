@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-import bs4, glob, os, re, sqlite3
+import os, re, sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-if os.path.isfile("docSet.dsidx"):
-    os.remove("docSet.dsidx")
-db = sqlite3.connect("docSet.dsidx")
-cursor = db.cursor()
-cursor.execute("CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);")
-cursor.execute("CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);")
+sys.path.insert(0, os.path.join("..", "..", "..", ".."))
+import docsets
+db = docsets.create_database()
 root = "http://docs.python-requests.org/en/master/api/index.html"
-for fname in glob.glob("Documents/index.html"):
-    page = open(fname, encoding="utf_8", errors="ignore").read()
-    soup = bs4.BeautifulSoup(page)
-    for tag in soup.find_all("dt", {"id": re.compile(r"^requests\.")}):
+for soup in docsets.soups_from_files("Documents/*.html"):
+    for tag in soup.find_all("dt", dict(id=re.compile(r"^requests\."))):
         name = tag.attrs["id"].strip()
         if not name: continue
         path = "#".join((root, name))
-        print("{}: {}".format(name, path))
-        cursor.execute("INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)",
-                       (name, "func", path))
-
-db.commit()
-db.close()
+        docsets.insert(db, name, "func", path)
