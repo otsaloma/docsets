@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ $# -lt 1 ]; then
+    echo "Usage: ./$(basename "$0") DIRECTORY..."
+    exit 1
+fi
+ROOTDIR="$PWD"
+for DIRECTORY; do
+    cd "$ROOTDIR/$DIRECTORY/Contents/Resources" || continue
+    rm -rf Documents
+    ./download
+    ./index
+done
