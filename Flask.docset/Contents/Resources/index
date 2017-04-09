@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import os, re, sys
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join("..", "..", "..", ".."))
+import docsets
+db = docsets.create_database()
+root = "http://flask.pocoo.org/docs/latest/api/index.html"
+for soup in docsets.soups_from_files("Documents/*.html"):
+    for tag in soup.find_all("dt", dict(id=re.compile(r"^flask\."))):
+        name = tag.attrs["id"].strip()
+        if not name: continue
+        path = "#".join((root, name))
+        docsets.insert(db, name, "func", path)
