@@ -4,8 +4,9 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join("..", "..", "..", ".."))
 import docsets
 db = docsets.create_database()
+added = []
 root = "https://docs.python.org/3/"
-for soup in docsets.soups_from_files("Documents/*.html"):
+for soup in docsets.soups_from_files("Documents/genindex-all.html"):
     for tag in soup.find_all("a", dict(href=re.compile("library/"))):
         name = tag.attrs["href"].strip()
         name = name.split("#")[-1]
@@ -15,4 +16,17 @@ for soup in docsets.soups_from_files("Documents/*.html"):
         if name.startswith("opcode-"): continue
         name = name.replace("module-", "")
         path = root + tag.attrs["href"].strip()
-        docsets.insert(db, name, "func", path)
+        if not (name, path) in added:
+            docsets.insert(db, name, "func", path)
+            added.append((name, path))
+for soup in docsets.soups_from_files("Documents/stdtypes.html"):
+    for tag in soup.find_all("a", dict(href=re.compile("^#"))):
+        name = tag.attrs["href"].strip()
+        name = name.split("#")[-1]
+        if not name: continue
+        if "-" in name: continue
+        if re.match("^id[0-9]+", name): continue
+        path = root + tag.attrs["href"].strip()
+        if not (name, path) in added:
+            docsets.insert(db, name, "func", path)
+            added.append((name, path))
