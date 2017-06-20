@@ -1,4 +1,4 @@
 #!/bin/sh
 cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N https://docs.python.org/3/genindex-all.html
-wget -N https://docs.python.org/3/library/stdtypes.html
+wget -N -t2 -T10 https://docs.python.org/3/genindex-all.html
+wget -N -t2 -T10 https://docs.python.org/3/library/stdtypes.html

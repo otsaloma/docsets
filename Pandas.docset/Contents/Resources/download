@@ -1,3 +1,3 @@
 #!/bin/sh
 cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N http://pandas.pydata.org/pandas-docs/stable/genindex.html
+wget -N -t2 -T10 http://pandas.pydata.org/pandas-docs/stable/genindex.html

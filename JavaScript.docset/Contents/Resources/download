@@ -1,3 +1,3 @@
 #!/bin/sh
 cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N https://developer.mozilla.org/en-US/docs/Web/JavaScript/Index
+wget -N -t2 -T10 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Index
