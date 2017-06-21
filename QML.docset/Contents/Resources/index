@@ -5,22 +5,21 @@ sys.path.insert(0, os.path.join("..", "..", "..", ".."))
 import docsets
 db = docsets.create_database()
 added = []
-root = "https://doc.qt.io/qt-5/"
-soup = docsets.soup_from_url("https://doc.qt.io/qt-5/qmltypes.html")
+root = "https://doc.qt.io/qt-5.6/"
+soup = docsets.soup_from_url("https://doc.qt.io/qt-5.6/qmltypes.html")
 for tag in soup.find_all("a", dict(href=re.compile("qml-.*html"))):
     name = tag.text.strip()
-    # QtQuickControls2 available only since Qt 5.7.
-    if name.endswith(": QtQuickControls2"): continue
-    name = name.replace(": QtQuickControls", "")
+    name = re.sub(":.*$", "", name)
     path = root + tag.attrs["href"].strip()
     if not (name, path) in added:
         docsets.insert(db, name, "func", path)
         added.append((name, path))
     soup = docsets.soup_from_url(path)
-    for tag in soup.find_all("a", dict(href=re.compile("-(prop|method)$"))):
-        fullname = ".".join((name, tag.text.strip()))
-        fullpath = root + tag.attrs["href"].strip()
-        if not fullpath.startswith(path): continue
-        if not (fullname, fullpath) in added:
-            docsets.insert(db, fullname, "func", fullpath)
-            added.append((fullname, fullpath))
+    for li in soup.find_all("li", class_="fn"):
+        attrs = dict(href=re.compile("-(prop|method)$"))
+        for tag in li.find_all("a", attrs):
+            fullname = ".".join((name, tag.text.strip()))
+            fullpath = root + tag.attrs["href"].strip()
+            if not (fullname, fullpath) in added:
+                docsets.insert(db, fullname, "func", fullpath)
+                added.append((fullname, fullpath))
