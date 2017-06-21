@@ -8,8 +8,7 @@ added = []
 root = "https://doc.qt.io/qt-5.6/"
 soup = docsets.soup_from_url("https://doc.qt.io/qt-5.6/qmltypes.html")
 for tag in soup.find_all("a", dict(href=re.compile("qml-.*html"))):
-    name = tag.text.strip()
-    name = re.sub(":.*$", "", name)
+    name = tag.text.split(":")[0].strip()
     path = root + tag.attrs["href"].strip()
     if not (name, path) in added:
         docsets.insert(db, name, "func", path)
