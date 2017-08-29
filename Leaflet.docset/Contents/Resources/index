@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join("..", "..", "..", ".."))
 import docsets
 db = docsets.create_database()
-root = "http://leafletjs.com/reference.html"
+root = "http://leafletjs.com/reference-1.2.0.html"
 for soup in docsets.soups_from_files("Documents/*.html"):
     for tag in soup.find_all("tr", dict(id=re.compile("-"))):
         name = tag["id"].strip().replace("-", ".")
