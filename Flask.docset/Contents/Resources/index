@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join("..", "..", "..", ".."))
 import docsets
 db = docsets.create_database()
-root = "http://flask.pocoo.org/docs/0.12/api/index.html"
+root = "http://flask.pocoo.org/docs/1.0/api/"
 for soup in docsets.soups_from_files("Documents/*.html"):
     for tag in soup.find_all("dt", dict(id=re.compile(r"^flask\."))):
         name = tag.attrs["id"].strip()
