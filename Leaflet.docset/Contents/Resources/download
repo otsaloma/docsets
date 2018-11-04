@@ -1,4 +1,0 @@
-#!/bin/sh
-# wget doesn't pull dynamically generated tr ids.
-# Save manually from a web inspector.
-# http://leafletjs.com/reference.html
