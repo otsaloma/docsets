@@ -7,7 +7,7 @@ docsets = (importlib.machinery.SourceFileLoader(
 db = docsets.create_database()
 root = "http://pandas.pydata.org/pandas-docs/stable/"
 for soup in docsets.soups_from_files("Documents/*.html"):
-    for tag in soup.find_all("a", dict(href=re.compile("generated/"))):
+    for tag in soup.find_all("a", dict(href=re.compile("reference/"))):
         name = tag.attrs["href"].strip()
         name = name.split("#")[-1]
         if not name: continue
