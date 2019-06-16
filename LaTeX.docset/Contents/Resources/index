@@ -9,5 +9,5 @@ for soup in docsets.soups_from_files("Documents/latex2e.html"):
     for tag in soup.find_all("a", dict(href=re.compile("#index-"))):
         name = tag.text.strip()
         if not name: continue
-        path = "Documents/latex2e.html" + tag.attrs["href"].strip()
+        path = "latex2e.html" + tag.attrs["href"].strip()
         docsets.insert(db, name, "func", path)
