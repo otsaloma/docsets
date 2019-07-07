@@ -1,11 +1,14 @@
 #!/bin/sh
+set -e
 if [ $# -lt 1 ]; then
+    echo "Download and index documentation for use."
     echo "Usage: ./$(basename "$0") DIRECTORY..."
     exit 1
 fi
-ROOTDIR="$PWD"
 for DIRECTORY; do
-    cd "$ROOTDIR/$DIRECTORY/Contents/Resources" || continue
-    ./download
-    ./index
+    echo "Entering $DIRECTORY..."
+    cd "$DIRECTORY/Contents/Resources"
+    [ -f download ] && ./download
+    [ -f index ] && ./index
+    cd "../../.."
 done
