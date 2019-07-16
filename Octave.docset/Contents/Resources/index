@@ -5,7 +5,7 @@ docsets = (importlib.machinery.SourceFileLoader(
     "docsets", os.path.join("..", "..", "..", "__init__.py"))
            .load_module("docsets"))
 db = docsets.create_database()
-root = "https://www.gnu.org/software/octave/doc/interpreter/"
+root = "https://octave.org/doc/interpreter/"
 for soup in docsets.soups_from_files("Documents/*.html"):
     for tag in soup.find_all("a", dict(href=re.compile("#index-"))):
         name = tag.text.strip()

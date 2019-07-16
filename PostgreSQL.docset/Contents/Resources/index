@@ -6,7 +6,7 @@ docsets = (importlib.machinery.SourceFileLoader(
            .load_module("docsets"))
 db = docsets.create_database()
 added = []
-root = "https://www.postgresql.org/docs/9.6/static/"
+root = "https://www.postgresql.org/docs/current/static/"
 for soup in docsets.soups_from_files("Documents/sql-commands.html"):
     for tag in soup.find_all("a", dict(href=re.compile("^sql-"))):
         name = tag.text.strip()

@@ -5,7 +5,7 @@ docsets = (importlib.machinery.SourceFileLoader(
     "docsets", os.path.join("..", "..", "..", "__init__.py"))
            .load_module("docsets"))
 db = docsets.create_database()
-root = "http://docs.python-requests.org/en/master/api/index.html"
+root = "https://2.python-requests.org/en/master/api/"
 for soup in docsets.soups_from_files("Documents/*.html"):
     for tag in soup.find_all("dt", dict(id=re.compile(r"^requests\."))):
         name = tag.attrs["id"].strip()
