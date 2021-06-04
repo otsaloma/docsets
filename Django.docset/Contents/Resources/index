@@ -5,7 +5,7 @@ docsets = (importlib.machinery.SourceFileLoader(
     "docsets", os.path.join("..", "..", "..", "__init__.py"))
            .load_module("docsets"))
 db = docsets.create_database()
-root = "https://docs.djangoproject.com/en/2.1/"
+root = "https://docs.djangoproject.com/en/3.2/"
 for soup in docsets.soups_from_files("Documents/*.html"):
     for tag in soup.select("dt > a"):
         href = tag.attrs["href"].strip()
