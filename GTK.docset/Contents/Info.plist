@@ -5,7 +5,7 @@
     <key>CFBundleIdentifier</key>
     <string>gtk</string>
     <key>CFBundleName</key>
-    <string>GTK+</string>
+    <string>GTK</string>
     <key>DocSetPlatformFamily</key>
     <string>gtk</string>
     <key>isDashDocset</key>
