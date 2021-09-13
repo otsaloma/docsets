@@ -9,7 +9,9 @@ applications that support the docset format.
 [Dash]: https://kapeli.com/docsets
 [helm-dash]: https://github.com/areina/helm-dash
 
-To generate these docsets, you'll need Wget, Python 3, Requests and
-Beautiful Soup 4 (bs4). To generate a docset, e.g. Python, run
-`./build.sh Python.docset`; to generate all docsets, run `./build.sh
-*.docset`.
+To generate a docset, e.g. Python, run the following commands.
+
+    ./download.sh Python.docset
+    ./index.sh Python.docset
+
+To generate all docsets, use `*.docset` as argument to the above.

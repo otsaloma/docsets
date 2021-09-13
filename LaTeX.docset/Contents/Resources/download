@@ -1,3 +1,0 @@
-#!/bin/sh
-cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N -t2 -T10 http://mirrors.ctan.org/info/latex2e-help-texinfo/latex2e.html

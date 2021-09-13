@@ -1,3 +1,0 @@
-#!/bin/sh
-cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N -t2 -T10 https://developer.gnome.org/gdk3/stable/api-index-full.html

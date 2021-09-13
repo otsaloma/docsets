@@ -1,5 +1,0 @@
-#!/bin/sh
-cd "$(dirname "$0")" && mkdir -p Documents && cd Documents
-wget -N -t2 -T10 https://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html
-wget -N -t2 -T10 https://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html
-wget -N -t2 -T10 https://www.gnu.org/software/bash/manual/html_node/Variable-Index.html
