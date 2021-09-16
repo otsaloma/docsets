@@ -7,5 +7,5 @@ root = "https://dataiter.readthedocs.io/en/latest/"
 for soup in util.soups_from_files("Documents/*.html"):
     for tag in soup.select('a[href*="#dataiter."]'):
         name = tag.attrs["href"].split("#")[-1]
-        path = root + name
+        path = root + tag.attrs["href"]
         util.insert(db, name, path)
