@@ -9,9 +9,8 @@ applications that support the docset format.
 [Dash]: https://kapeli.com/docsets
 [helm-dash]: https://github.com/areina/helm-dash
 
-To generate a docset, e.g. Python, run the following commands.
+To generate a docset, e.g. Python, run the following command.
 
-    ./download.sh Python.docset
-    ./index.sh Python.docset
+    ./update.sh Python.docset
 
 To generate all docsets, use `*.docset` as argument to the above.
