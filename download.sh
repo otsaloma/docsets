@@ -14,6 +14,8 @@ for DIRECTORY; do
         echo "$NAME: $URL"
         curl -m 30 -o Documents/$NAME.html -s "$URL" || FAILED="$FAILED $DIRECTORY"
     done
+    # Parsing empty files is likely to fail.
+    find Documents -empty -delete
 done
 
 for DIRECTORY in $FAILED; do
