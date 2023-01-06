@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 FAILED=""
 ROOT_DIR="$(pwd)"
