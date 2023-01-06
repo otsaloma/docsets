@@ -4,7 +4,7 @@ import re
 import util
 
 db = util.create_database()
-root = "https://docs.djangoproject.com/en/3.2/"
+root = "https://docs.djangoproject.com/en/4.0/"
 for soup in util.soups_from_files("Documents/*.html"):
     for tag in soup.select(".index dt > a"):
         href = tag.attrs["href"]
