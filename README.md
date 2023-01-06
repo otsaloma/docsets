@@ -13,4 +13,4 @@ To generate a docset, e.g. Python, run the following command.
 
     ./update.sh Python.docset
 
-To generate all docsets, use `*.docset` as argument to the above.
+To generate all docsets, use `*.docset` as the argument above.
