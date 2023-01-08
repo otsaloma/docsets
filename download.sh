@@ -6,6 +6,7 @@ download () {
     URL="$2"
     HASH=$(echo "$URL" | md5sum | cut -c 1-16)
     printf "%4d. %s %s\n" $NUM $HASH $URL
+    test -s Documents/$HASH.html && return 0
     curl --fail \
          --max-time 30 \
          --output Documents/$HASH.html \
