@@ -80,6 +80,7 @@ https://docs.gtk.org/gdk4/iface.Popup.html
 https://docs.gtk.org/gdk4/iface.Toplevel.html
 https://docs.gtk.org/gdk4/struct.ContentFormats.html
 https://docs.gtk.org/gdk4/struct.ContentFormatsBuilder.html
+https://docs.gtk.org/gdk4/struct.DragSurfaceSize.html
 https://docs.gtk.org/gdk4/struct.EventSequence.html
 https://docs.gtk.org/gdk4/struct.FileList.html
 https://docs.gtk.org/gdk4/struct.FrameTimings.html
@@ -87,6 +88,7 @@ https://docs.gtk.org/gdk4/struct.KeymapKey.html
 https://docs.gtk.org/gdk4/struct.PopupLayout.html
 https://docs.gtk.org/gdk4/struct.Rectangle.html
 https://docs.gtk.org/gdk4/struct.RGBA.html
+https://docs.gtk.org/gdk4/struct.TextureDownloader.html
 https://docs.gtk.org/gdk4/struct.TimeCoord.html
 https://docs.gtk.org/gdk4/struct.ToplevelLayout.html
 https://docs.gtk.org/gdk4/struct.ToplevelSize.html
@@ -134,6 +136,7 @@ https://docs.gtk.org/gdk4/func.content_register_deserializer.html
 https://docs.gtk.org/gdk4/func.content_register_serializer.html
 https://docs.gtk.org/gdk4/func.content_serialize_async.html
 https://docs.gtk.org/gdk4/func.content_serialize_finish.html
+https://docs.gtk.org/gdk4/func.drag_surface_size_get_type.html
 https://docs.gtk.org/gdk4/func.events_get_angle.html
 https://docs.gtk.org/gdk4/func.events_get_center.html
 https://docs.gtk.org/gdk4/func.events_get_distance.html
@@ -2920,8 +2923,20 @@ https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_STANDARD_TARGET_URI.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_STANDARD_TYPE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_IS_VALID.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_PATH.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAILING_FAILED.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE.html
+https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_TIME_ACCESS.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_TIME_ACCESS_NSEC.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_TIME_ACCESS_USEC.html
@@ -2953,6 +2968,7 @@ https://docs.gtk.org/gio/const.MENU_ATTRIBUTE_ACTION_NAMESPACE.html
 https://docs.gtk.org/gio/const.MENU_ATTRIBUTE_ICON.html
 https://docs.gtk.org/gio/const.MENU_ATTRIBUTE_LABEL.html
 https://docs.gtk.org/gio/const.MENU_ATTRIBUTE_TARGET.html
+https://docs.gtk.org/gio/const.MENU_EXPORTER_MAX_SECTION_SIZE.html
 https://docs.gtk.org/gio/const.MENU_LINK_SECTION.html
 https://docs.gtk.org/gio/const.MENU_LINK_SUBMENU.html
 https://docs.gtk.org/gio/const.NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME.html
@@ -3008,6 +3024,7 @@ https://docs.gtk.org/glib/struct.Once.html
 https://docs.gtk.org/glib/struct.OptionContext.html
 https://docs.gtk.org/glib/struct.OptionEntry.html
 https://docs.gtk.org/glib/struct.OptionGroup.html
+https://docs.gtk.org/glib/struct.PathBuf.html
 https://docs.gtk.org/glib/struct.PatternSpec.html
 https://docs.gtk.org/glib/struct.PollFD.html
 https://docs.gtk.org/glib/struct.Private.html
@@ -3184,6 +3201,7 @@ https://docs.gtk.org/glib/func.access.html
 https://docs.gtk.org/glib/func.aligned_alloc.html
 https://docs.gtk.org/glib/func.aligned_alloc0.html
 https://docs.gtk.org/glib/func.aligned_free.html
+https://docs.gtk.org/glib/func.aligned_free_sized.html
 https://docs.gtk.org/glib/func.ascii_digit_value.html
 https://docs.gtk.org/glib/func.ascii_dtostr.html
 https://docs.gtk.org/glib/func.ascii_formatd.html
@@ -3329,6 +3347,7 @@ https://docs.gtk.org/glib/func.format_size_for_display.html
 https://docs.gtk.org/glib/func.format_size_full.html
 https://docs.gtk.org/glib/func.fprintf.html
 https://docs.gtk.org/glib/func.free.html
+https://docs.gtk.org/glib/func.free_sized.html
 https://docs.gtk.org/glib/func.get_application_name.html
 https://docs.gtk.org/glib/func.get_charset.html
 https://docs.gtk.org/glib/func.get_codeset.html
@@ -3753,8 +3772,10 @@ https://docs.gtk.org/glib/func.ATEXIT.html
 https://docs.gtk.org/glib/func.atomic_rc_box_new.html
 https://docs.gtk.org/glib/func.atomic_rc_box_new0.html
 https://docs.gtk.org/glib/func.BREAKPOINT.html
+https://docs.gtk.org/glib/func.C_STD_CHECK_VERSION.html
 https://docs.gtk.org/glib/func.CHECK_VERSION.html
 https://docs.gtk.org/glib/func.critical.html
+https://docs.gtk.org/glib/func.CXX_STD_CHECK_VERSION.html
 https://docs.gtk.org/glib/func.datalist_id_remove_data.html
 https://docs.gtk.org/glib/func.datalist_id_set_data.html
 https://docs.gtk.org/glib/func.datalist_remove_data.html
@@ -3896,7 +3917,6 @@ https://docs.gtk.org/glib/func.UNAVAILABLE_TYPE.html
 https://docs.gtk.org/glib/func.UNLIKELY.html
 https://docs.gtk.org/glib/func.UNLOCK.html
 https://docs.gtk.org/glib/func.utf8_next_char.html
-https://docs.gtk.org/glib/func.VA_COPY.html
 https://docs.gtk.org/glib/func.VARIANT_BUILDER_INIT.html
 https://docs.gtk.org/glib/func.VARIANT_DICT_INIT.html
 https://docs.gtk.org/glib/func.warn_if_fail.html
@@ -3908,6 +3928,7 @@ https://docs.gtk.org/glib/func.WIN32_HAVE_WIDECHAR_API.html
 https://docs.gtk.org/glib/const.ANALYZER_ANALYZING.html
 https://docs.gtk.org/glib/const.ASCII_DTOSTR_BUF_SIZE.html
 https://docs.gtk.org/glib/const.BIG_ENDIAN.html
+https://docs.gtk.org/glib/const.C_STD_VERSION.html
 https://docs.gtk.org/glib/const.CSET_A_2_Z.html
 https://docs.gtk.org/glib/const.CSET_a_2_z.html
 https://docs.gtk.org/glib/const.CSET_DIGITS.html
@@ -4438,7 +4459,9 @@ https://docs.gtk.org/gtk4/class.ColorChooserWidget.html
 https://docs.gtk.org/gtk4/class.ColorDialog.html
 https://docs.gtk.org/gtk4/class.ColorDialogButton.html
 https://docs.gtk.org/gtk4/class.ColumnView.html
+https://docs.gtk.org/gtk4/class.ColumnViewCell.html
 https://docs.gtk.org/gtk4/class.ColumnViewColumn.html
+https://docs.gtk.org/gtk4/class.ColumnViewRow.html
 https://docs.gtk.org/gtk4/class.ColumnViewSorter.html
 https://docs.gtk.org/gtk4/class.ComboBox.html
 https://docs.gtk.org/gtk4/class.ComboBoxText.html
@@ -4637,6 +4660,7 @@ https://docs.gtk.org/gtk4/class.TreeSelection.html
 https://docs.gtk.org/gtk4/class.TreeStore.html
 https://docs.gtk.org/gtk4/class.TreeView.html
 https://docs.gtk.org/gtk4/class.TreeViewColumn.html
+https://docs.gtk.org/gtk4/class.UriLauncher.html
 https://docs.gtk.org/gtk4/class.Video.html
 https://docs.gtk.org/gtk4/class.Viewport.html
 https://docs.gtk.org/gtk4/class.VolumeButton.html
@@ -4696,6 +4720,7 @@ https://docs.gtk.org/gtk4/struct.TreeRowReference.html
 https://docs.gtk.org/gtk4/alias.Allocation.html
 https://docs.gtk.org/gtk4/enum.AccessibleAutocomplete.html
 https://docs.gtk.org/gtk4/enum.AccessibleInvalidState.html
+https://docs.gtk.org/gtk4/enum.AccessiblePlatformState.html
 https://docs.gtk.org/gtk4/enum.AccessibleProperty.html
 https://docs.gtk.org/gtk4/enum.AccessibleRelation.html
 https://docs.gtk.org/gtk4/enum.AccessibleRole.html
@@ -4734,6 +4759,7 @@ https://docs.gtk.org/gtk4/enum.InscriptionOverflow.html
 https://docs.gtk.org/gtk4/enum.Justification.html
 https://docs.gtk.org/gtk4/enum.LevelBarMode.html
 https://docs.gtk.org/gtk4/enum.License.html
+https://docs.gtk.org/gtk4/enum.ListTabBehavior.html
 https://docs.gtk.org/gtk4/enum.MessageType.html
 https://docs.gtk.org/gtk4/enum.MovementStep.html
 https://docs.gtk.org/gtk4/enum.NaturalWrapMode.html
