@@ -6,13 +6,13 @@ from pathlib import Path
 
 urls = []
 for root in [
-        "https://docs.gtk.org/gdk-pixbuf/",
-        "https://docs.gtk.org/gdk4/",
-        "https://docs.gtk.org/gio/",
-        "https://docs.gtk.org/glib/",
-        "https://docs.gtk.org/gobject/",
-        "https://docs.gtk.org/gtk4/",
-        "https://docs.gtk.org/Pango/",
+    "https://docs.gtk.org/gdk-pixbuf/",
+    "https://docs.gtk.org/gdk4/",
+    "https://docs.gtk.org/gio/",
+    "https://docs.gtk.org/glib/",
+    "https://docs.gtk.org/gobject/",
+    "https://docs.gtk.org/gtk4/",
+    "https://docs.gtk.org/Pango/",
 ]:
     soup = util.soup_from_url(root)
     for a in soup.select("a.symbol"):
