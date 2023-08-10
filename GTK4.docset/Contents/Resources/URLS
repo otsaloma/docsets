@@ -58,6 +58,7 @@ https://docs.gtk.org/gdk4/class.FocusEvent.html
 https://docs.gtk.org/gdk4/class.FrameClock.html
 https://docs.gtk.org/gdk4/class.GLContext.html
 https://docs.gtk.org/gdk4/class.GLTexture.html
+https://docs.gtk.org/gdk4/class.GLTextureBuilder.html
 https://docs.gtk.org/gdk4/class.GrabBrokenEvent.html
 https://docs.gtk.org/gdk4/class.KeyEvent.html
 https://docs.gtk.org/gdk4/class.MemoryTexture.html
@@ -4551,6 +4552,7 @@ https://docs.gtk.org/gtk4/class.LinkButton.html
 https://docs.gtk.org/gtk4/class.ListBase.html
 https://docs.gtk.org/gtk4/class.ListBox.html
 https://docs.gtk.org/gtk4/class.ListBoxRow.html
+https://docs.gtk.org/gtk4/class.ListHeader.html
 https://docs.gtk.org/gtk4/class.ListItem.html
 https://docs.gtk.org/gtk4/class.ListItemFactory.html
 https://docs.gtk.org/gtk4/class.ListStore.html
@@ -4688,6 +4690,7 @@ https://docs.gtk.org/gtk4/iface.Orientable.html
 https://docs.gtk.org/gtk4/iface.PrintOperationPreview.html
 https://docs.gtk.org/gtk4/iface.Root.html
 https://docs.gtk.org/gtk4/iface.Scrollable.html
+https://docs.gtk.org/gtk4/iface.SectionModel.html
 https://docs.gtk.org/gtk4/iface.SelectionModel.html
 https://docs.gtk.org/gtk4/iface.ShortcutManager.html
 https://docs.gtk.org/gtk4/iface.StyleProvider.html
@@ -4713,6 +4716,7 @@ https://docs.gtk.org/gtk4/struct.RecentData.html
 https://docs.gtk.org/gtk4/struct.RecentInfo.html
 https://docs.gtk.org/gtk4/struct.RequestedSize.html
 https://docs.gtk.org/gtk4/struct.Requisition.html
+https://docs.gtk.org/gtk4/struct.ScrollInfo.html
 https://docs.gtk.org/gtk4/struct.TextIter.html
 https://docs.gtk.org/gtk4/struct.TreeIter.html
 https://docs.gtk.org/gtk4/struct.TreePath.html
@@ -4821,6 +4825,7 @@ https://docs.gtk.org/gtk4/flags.EventControllerScrollFlags.html
 https://docs.gtk.org/gtk4/flags.FontChooserLevel.html
 https://docs.gtk.org/gtk4/flags.IconLookupFlags.html
 https://docs.gtk.org/gtk4/flags.InputHints.html
+https://docs.gtk.org/gtk4/flags.ListScrollFlags.html
 https://docs.gtk.org/gtk4/flags.PickFlags.html
 https://docs.gtk.org/gtk4/flags.PopoverMenuFlags.html
 https://docs.gtk.org/gtk4/flags.PrintCapabilities.html
