@@ -3,7 +3,7 @@
 import util
 
 db = util.create_database()
-root = "https://flask.palletsprojects.com/en/2.3.x/api/"
+root = "https://flask.palletsprojects.com/en/3.0.x/api/"
 for soup in util.soups_from_files("Documents/*.html"):
     for tag in soup.select('dt[id^="flask."]'):
         name = tag.attrs["id"]
