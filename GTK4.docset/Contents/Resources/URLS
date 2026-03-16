@@ -31,6 +31,7 @@ https://docs.gtk.org/gdk-pixbuf/callback.PixbufModuleStopLoadFunc.html
 https://docs.gtk.org/gdk-pixbuf/callback.PixbufModuleUpdatedFunc.html
 https://docs.gtk.org/gdk-pixbuf/callback.PixbufSaveFunc.html
 https://docs.gtk.org/gdk-pixbuf/func.PIXBUF_CHECK_VERSION.html
+https://docs.gtk.org/gdk-pixbuf/func.PIXBUF_DEPRECATED_IN_2_44_FOR.html
 https://docs.gtk.org/gdk-pixbuf/const.PIXBUF_MAJOR.html
 https://docs.gtk.org/gdk-pixbuf/const.PIXBUF_MICRO.html
 https://docs.gtk.org/gdk-pixbuf/const.PIXBUF_MINOR.html
@@ -101,6 +102,7 @@ https://docs.gtk.org/gdk4/struct.ToplevelLayout.html
 https://docs.gtk.org/gdk4/struct.ToplevelSize.html
 https://docs.gtk.org/gdk4/enum.AxisUse.html
 https://docs.gtk.org/gdk4/enum.CicpRange.html
+https://docs.gtk.org/gdk4/enum.ColorChannel.html
 https://docs.gtk.org/gdk4/enum.CrossingMode.html
 https://docs.gtk.org/gdk4/enum.DevicePadFeature.html
 https://docs.gtk.org/gdk4/enum.DeviceToolType.html
@@ -113,6 +115,7 @@ https://docs.gtk.org/gdk4/enum.KeyMatch.html
 https://docs.gtk.org/gdk4/enum.MemoryFormat.html
 https://docs.gtk.org/gdk4/enum.NotifyType.html
 https://docs.gtk.org/gdk4/enum.ScrollDirection.html
+https://docs.gtk.org/gdk4/enum.ScrollRelativeDirection.html
 https://docs.gtk.org/gdk4/enum.ScrollUnit.html
 https://docs.gtk.org/gdk4/enum.SubpixelLayout.html
 https://docs.gtk.org/gdk4/enum.SurfaceEdge.html
@@ -2652,7 +2655,6 @@ https://docs.gtk.org/gio/class.DBusObjectSkeleton.html
 https://docs.gtk.org/gio/class.DBusProxy.html
 https://docs.gtk.org/gio/class.DBusServer.html
 https://docs.gtk.org/gio/class.DebugControllerDBus.html
-https://docs.gtk.org/gio/class.DesktopAppInfo.html
 https://docs.gtk.org/gio/class.Emblem.html
 https://docs.gtk.org/gio/class.EmblemedIcon.html
 https://docs.gtk.org/gio/class.FileEnumerator.html
@@ -2671,6 +2673,8 @@ https://docs.gtk.org/gio/class.InetSocketAddress.html
 https://docs.gtk.org/gio/class.InputStream.html
 https://docs.gtk.org/gio/class.IOModule.html
 https://docs.gtk.org/gio/class.IOStream.html
+https://docs.gtk.org/gio/class.IPTosMessage.html
+https://docs.gtk.org/gio/class.IPv6TclassMessage.html
 https://docs.gtk.org/gio/class.ListStore.html
 https://docs.gtk.org/gio/class.MemoryInputStream.html
 https://docs.gtk.org/gio/class.MemoryOutputStream.html
@@ -2721,6 +2725,10 @@ https://docs.gtk.org/gio/class.TlsConnection.html
 https://docs.gtk.org/gio/class.TlsDatabase.html
 https://docs.gtk.org/gio/class.TlsInteraction.html
 https://docs.gtk.org/gio/class.TlsPassword.html
+https://docs.gtk.org/gio/class.UnixConnection.html
+https://docs.gtk.org/gio/class.UnixCredentialsMessage.html
+https://docs.gtk.org/gio/class.UnixFDList.html
+https://docs.gtk.org/gio/class.UnixSocketAddress.html
 https://docs.gtk.org/gio/class.Vfs.html
 https://docs.gtk.org/gio/class.VolumeMonitor.html
 https://docs.gtk.org/gio/class.ZlibCompressor.html
@@ -2737,13 +2745,11 @@ https://docs.gtk.org/gio/iface.DBusInterface.html
 https://docs.gtk.org/gio/iface.DBusObject.html
 https://docs.gtk.org/gio/iface.DBusObjectManager.html
 https://docs.gtk.org/gio/iface.DebugController.html
-https://docs.gtk.org/gio/iface.DesktopAppInfoLookup.html
 https://docs.gtk.org/gio/iface.Drive.html
 https://docs.gtk.org/gio/iface.DtlsClientConnection.html
 https://docs.gtk.org/gio/iface.DtlsConnection.html
 https://docs.gtk.org/gio/iface.DtlsServerConnection.html
 https://docs.gtk.org/gio/iface.File.html
-https://docs.gtk.org/gio/iface.FileDescriptorBased.html
 https://docs.gtk.org/gio/iface.Icon.html
 https://docs.gtk.org/gio/iface.Initable.html
 https://docs.gtk.org/gio/iface.ListModel.html
@@ -2802,13 +2808,13 @@ https://docs.gtk.org/gio/enum.DBusMessageByteOrder.html
 https://docs.gtk.org/gio/enum.DBusMessageHeaderField.html
 https://docs.gtk.org/gio/enum.DBusMessageType.html
 https://docs.gtk.org/gio/enum.DriveStartStopType.html
+https://docs.gtk.org/gio/enum.EcnCodePoint.html
 https://docs.gtk.org/gio/enum.EmblemOrigin.html
 https://docs.gtk.org/gio/enum.FileAttributeStatus.html
 https://docs.gtk.org/gio/enum.FileAttributeType.html
 https://docs.gtk.org/gio/enum.FileMonitorEvent.html
 https://docs.gtk.org/gio/enum.FilesystemPreviewType.html
 https://docs.gtk.org/gio/enum.FileType.html
-https://docs.gtk.org/gio/enum.IOModuleScopeFlags.html
 https://docs.gtk.org/gio/enum.MemoryMonitorWarningLevel.html
 https://docs.gtk.org/gio/enum.MountOperationResult.html
 https://docs.gtk.org/gio/enum.NetworkConnectivity.html
@@ -2822,12 +2828,11 @@ https://docs.gtk.org/gio/enum.SocketListenerEvent.html
 https://docs.gtk.org/gio/enum.SocketProtocol.html
 https://docs.gtk.org/gio/enum.SocketType.html
 https://docs.gtk.org/gio/enum.TlsAuthenticationMode.html
-https://docs.gtk.org/gio/enum.TlsCertificateRequestFlags.html
 https://docs.gtk.org/gio/enum.TlsChannelBindingType.html
-https://docs.gtk.org/gio/enum.TlsDatabaseLookupFlags.html
 https://docs.gtk.org/gio/enum.TlsInteractionResult.html
 https://docs.gtk.org/gio/enum.TlsProtocolVersion.html
 https://docs.gtk.org/gio/enum.TlsRehandshakeMode.html
+https://docs.gtk.org/gio/enum.UnixSocketAddressType.html
 https://docs.gtk.org/gio/enum.ZlibCompressorFormat.html
 https://docs.gtk.org/gio/flags.AppInfoCreateFlags.html
 https://docs.gtk.org/gio/flags.ApplicationFlags.html
@@ -2854,6 +2859,7 @@ https://docs.gtk.org/gio/flags.FileCreateFlags.html
 https://docs.gtk.org/gio/flags.FileMeasureFlags.html
 https://docs.gtk.org/gio/flags.FileMonitorFlags.html
 https://docs.gtk.org/gio/flags.FileQueryInfoFlags.html
+https://docs.gtk.org/gio/flags.IOModuleScopeFlags.html
 https://docs.gtk.org/gio/flags.IOStreamSpliceFlags.html
 https://docs.gtk.org/gio/flags.MountMountFlags.html
 https://docs.gtk.org/gio/flags.MountUnmountFlags.html
@@ -2866,6 +2872,8 @@ https://docs.gtk.org/gio/flags.SocketMsgFlags.html
 https://docs.gtk.org/gio/flags.SubprocessFlags.html
 https://docs.gtk.org/gio/flags.TestDBusFlags.html
 https://docs.gtk.org/gio/flags.TlsCertificateFlags.html
+https://docs.gtk.org/gio/flags.TlsCertificateRequestFlags.html
+https://docs.gtk.org/gio/flags.TlsDatabaseLookupFlags.html
 https://docs.gtk.org/gio/flags.TlsDatabaseVerifyFlags.html
 https://docs.gtk.org/gio/flags.TlsPasswordFlags.html
 https://docs.gtk.org/gio/error.DBusError.html
@@ -2891,7 +2899,6 @@ https://docs.gtk.org/gio/callback.DBusSignalCallback.html
 https://docs.gtk.org/gio/callback.DBusSubtreeDispatchFunc.html
 https://docs.gtk.org/gio/callback.DBusSubtreeEnumerateFunc.html
 https://docs.gtk.org/gio/callback.DBusSubtreeIntrospectFunc.html
-https://docs.gtk.org/gio/callback.DesktopAppLaunchCallback.html
 https://docs.gtk.org/gio/callback.FileMeasureProgressCallback.html
 https://docs.gtk.org/gio/callback.FileProgressCallback.html
 https://docs.gtk.org/gio/callback.FileReadMoreCallback.html
@@ -3036,6 +3043,7 @@ https://docs.gtk.org/gio/func.DEPRECATED_ENUMERATOR_IN_2_80_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+https://docs.gtk.org/gio/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_IN_2_26_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_IN_2_28_FOR.html
@@ -3068,6 +3076,7 @@ https://docs.gtk.org/gio/func.DEPRECATED_IN_2_80_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_IN_2_82_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_IN_2_84_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_IN_2_86_FOR.html
+https://docs.gtk.org/gio/func.DEPRECATED_IN_2_88_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -3099,6 +3108,7 @@ https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_80_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+https://docs.gtk.org/gio/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -3130,13 +3140,13 @@ https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_80_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+https://docs.gtk.org/gio/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 https://docs.gtk.org/gio/func.TEST_DBUS.html
 https://docs.gtk.org/gio/func.UNAVAILABLE.html
 https://docs.gtk.org/gio/func.UNAVAILABLE_STATIC_INLINE.html
 https://docs.gtk.org/gio/const.DBUS_METHOD_INVOCATION_HANDLED.html
 https://docs.gtk.org/gio/const.DBUS_METHOD_INVOCATION_UNHANDLED.html
 https://docs.gtk.org/gio/const.DEBUG_CONTROLLER_EXTENSION_POINT_NAME.html
-https://docs.gtk.org/gio/const.DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME.html
 https://docs.gtk.org/gio/const.DRIVE_IDENTIFIER_KIND_UNIX_DEVICE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_ACCESS_CAN_DELETE.html
 https://docs.gtk.org/gio/const.FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE.html
@@ -3587,7 +3597,6 @@ https://docs.gtk.org/glib/func.clear_list.html
 https://docs.gtk.org/glib/func.clear_pointer.html
 https://docs.gtk.org/glib/func.clear_slist.html
 https://docs.gtk.org/glib/func.close.html
-https://docs.gtk.org/glib/func.closefrom.html
 https://docs.gtk.org/glib/func.compute_checksum_for_bytes.html
 https://docs.gtk.org/glib/func.compute_checksum_for_data.html
 https://docs.gtk.org/glib/func.compute_checksum_for_string.html
@@ -3629,7 +3638,6 @@ https://docs.gtk.org/glib/func.dpgettext2.html
 https://docs.gtk.org/glib/func.environ_getenv.html
 https://docs.gtk.org/glib/func.environ_setenv.html
 https://docs.gtk.org/glib/func.environ_unsetenv.html
-https://docs.gtk.org/glib/func.fdwalk_set_cloexec.html
 https://docs.gtk.org/glib/func.file_error_from_errno.html
 https://docs.gtk.org/glib/func.file_error_quark.html
 https://docs.gtk.org/glib/func.file_get_contents.html
@@ -3668,6 +3676,7 @@ https://docs.gtk.org/glib/func.get_language_names.html
 https://docs.gtk.org/glib/func.get_language_names_with_category.html
 https://docs.gtk.org/glib/func.get_locale_variants.html
 https://docs.gtk.org/glib/func.get_monotonic_time.html
+https://docs.gtk.org/glib/func.get_monotonic_time_ns.html
 https://docs.gtk.org/glib/func.get_num_processors.html
 https://docs.gtk.org/glib/func.get_os_info.html
 https://docs.gtk.org/glib/func.get_prgname.html
@@ -3709,6 +3718,7 @@ https://docs.gtk.org/glib/func.locale_from_utf8.html
 https://docs.gtk.org/glib/func.locale_to_utf8.html
 https://docs.gtk.org/glib/func.log.html
 https://docs.gtk.org/glib/func.log_default_handler.html
+https://docs.gtk.org/glib/func.log_get_always_fatal.html
 https://docs.gtk.org/glib/func.log_get_debug_enabled.html
 https://docs.gtk.org/glib/func.log_remove_handler.html
 https://docs.gtk.org/glib/func.log_set_always_fatal.html
@@ -3951,6 +3961,7 @@ https://docs.gtk.org/glib/func.test_timer_start.html
 https://docs.gtk.org/glib/func.test_trap_assertions.html
 https://docs.gtk.org/glib/func.test_trap_fork.html
 https://docs.gtk.org/glib/func.test_trap_has_passed.html
+https://docs.gtk.org/glib/func.test_trap_has_skipped.html
 https://docs.gtk.org/glib/func.test_trap_reached_timeout.html
 https://docs.gtk.org/glib/func.test_trap_subprocess.html
 https://docs.gtk.org/glib/func.test_trap_subprocess_with_envp.html
@@ -4359,6 +4370,7 @@ https://docs.gtk.org/glib/const.MININT64.html
 https://docs.gtk.org/glib/const.MININT8.html
 https://docs.gtk.org/glib/const.MINOR_VERSION.html
 https://docs.gtk.org/glib/const.MODULE_SUFFIX.html
+https://docs.gtk.org/glib/const.NSEC_PER_SEC.html
 https://docs.gtk.org/glib/const.OPTION_REMAINING.html
 https://docs.gtk.org/glib/const.PDP_ENDIAN.html
 https://docs.gtk.org/glib/const.PI.html
@@ -4713,6 +4725,7 @@ https://docs.gtk.org/gobject/func.DEPRECATED_ENUMERATOR_IN_2_80_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+https://docs.gtk.org/gobject/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_26_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_28_FOR.html
@@ -4745,6 +4758,7 @@ https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_80_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_82_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_84_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_86_FOR.html
+https://docs.gtk.org/gobject/func.DEPRECATED_IN_2_88_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -4776,6 +4790,7 @@ https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_80_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+https://docs.gtk.org/gobject/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -4807,6 +4822,7 @@ https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_80_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+https://docs.gtk.org/gobject/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 https://docs.gtk.org/gobject/func.ENUM_CLASS_TYPE.html
 https://docs.gtk.org/gobject/func.ENUM_CLASS_TYPE_NAME.html
 https://docs.gtk.org/gobject/func.FLAGS_CLASS_TYPE.html
@@ -4900,6 +4916,7 @@ https://docs.gtk.org/gobject/const.VALUE_COLLECT_FORMAT_MAX_LENGTH.html
 https://docs.gtk.org/gobject/const.VALUE_INTERNED_STRING.html
 https://docs.gtk.org/gobject/const.VALUE_NOCOPY_CONTENTS.html
 https://docs.gtk.org/gtk4/class.AboutDialog.html
+https://docs.gtk.org/gtk4/class.AccessibleHyperlink.html
 https://docs.gtk.org/gtk4/class.ActionBar.html
 https://docs.gtk.org/gtk4/class.ActivateAction.html
 https://docs.gtk.org/gtk4/class.Adjustment.html
@@ -5082,6 +5099,7 @@ https://docs.gtk.org/gtk4/class.PasswordEntry.html
 https://docs.gtk.org/gtk4/class.PasswordEntryBuffer.html
 https://docs.gtk.org/gtk4/class.Picture.html
 https://docs.gtk.org/gtk4/class.Popover.html
+https://docs.gtk.org/gtk4/class.PopoverBin.html
 https://docs.gtk.org/gtk4/class.PopoverMenu.html
 https://docs.gtk.org/gtk4/class.PopoverMenuBar.html
 https://docs.gtk.org/gtk4/class.PrintContext.html
@@ -5134,6 +5152,7 @@ https://docs.gtk.org/gtk4/class.StringList.html
 https://docs.gtk.org/gtk4/class.StringObject.html
 https://docs.gtk.org/gtk4/class.StringSorter.html
 https://docs.gtk.org/gtk4/class.StyleContext.html
+https://docs.gtk.org/gtk4/class.Svg.html
 https://docs.gtk.org/gtk4/class.Switch.html
 https://docs.gtk.org/gtk4/class.Text.html
 https://docs.gtk.org/gtk4/class.TextBuffer.html
@@ -5154,6 +5173,7 @@ https://docs.gtk.org/gtk4/class.TreeSelection.html
 https://docs.gtk.org/gtk4/class.TreeStore.html
 https://docs.gtk.org/gtk4/class.TreeView.html
 https://docs.gtk.org/gtk4/class.TreeViewColumn.html
+https://docs.gtk.org/gtk4/class.TryExpression.html
 https://docs.gtk.org/gtk4/class.UriLauncher.html
 https://docs.gtk.org/gtk4/class.Video.html
 https://docs.gtk.org/gtk4/class.Viewport.html
@@ -5165,6 +5185,7 @@ https://docs.gtk.org/gtk4/class.WindowControls.html
 https://docs.gtk.org/gtk4/class.WindowGroup.html
 https://docs.gtk.org/gtk4/class.WindowHandle.html
 https://docs.gtk.org/gtk4/iface.Accessible.html
+https://docs.gtk.org/gtk4/iface.AccessibleHypertext.html
 https://docs.gtk.org/gtk4/iface.AccessibleRange.html
 https://docs.gtk.org/gtk4/iface.AccessibleText.html
 https://docs.gtk.org/gtk4/iface.Actionable.html
@@ -5213,6 +5234,7 @@ https://docs.gtk.org/gtk4/struct.RecentInfo.html
 https://docs.gtk.org/gtk4/struct.RequestedSize.html
 https://docs.gtk.org/gtk4/struct.Requisition.html
 https://docs.gtk.org/gtk4/struct.ScrollInfo.html
+https://docs.gtk.org/gtk4/struct.SvgLocation.html
 https://docs.gtk.org/gtk4/struct.TextIter.html
 https://docs.gtk.org/gtk4/struct.TreeIter.html
 https://docs.gtk.org/gtk4/struct.TreePath.html
@@ -5261,6 +5283,8 @@ https://docs.gtk.org/gtk4/enum.IconViewDropPosition.html
 https://docs.gtk.org/gtk4/enum.ImageType.html
 https://docs.gtk.org/gtk4/enum.InputPurpose.html
 https://docs.gtk.org/gtk4/enum.InscriptionOverflow.html
+https://docs.gtk.org/gtk4/enum.InterfaceColorScheme.html
+https://docs.gtk.org/gtk4/enum.InterfaceContrast.html
 https://docs.gtk.org/gtk4/enum.Justification.html
 https://docs.gtk.org/gtk4/enum.LevelBarMode.html
 https://docs.gtk.org/gtk4/enum.License.html
@@ -5288,7 +5312,9 @@ https://docs.gtk.org/gtk4/enum.PrintQuality.html
 https://docs.gtk.org/gtk4/enum.PrintStatus.html
 https://docs.gtk.org/gtk4/enum.PropagationLimit.html
 https://docs.gtk.org/gtk4/enum.PropagationPhase.html
+https://docs.gtk.org/gtk4/enum.ReducedMotion.html
 https://docs.gtk.org/gtk4/enum.ResponseType.html
+https://docs.gtk.org/gtk4/enum.RestoreReason.html
 https://docs.gtk.org/gtk4/enum.RevealerTransitionType.html
 https://docs.gtk.org/gtk4/enum.ScrollablePolicy.html
 https://docs.gtk.org/gtk4/enum.ScrollStep.html
@@ -5316,6 +5342,7 @@ https://docs.gtk.org/gtk4/enum.TreeViewColumnSizing.html
 https://docs.gtk.org/gtk4/enum.TreeViewDropPosition.html
 https://docs.gtk.org/gtk4/enum.TreeViewGridLines.html
 https://docs.gtk.org/gtk4/enum.Unit.html
+https://docs.gtk.org/gtk4/enum.WindowGravity.html
 https://docs.gtk.org/gtk4/enum.WrapMode.html
 https://docs.gtk.org/gtk4/flags.ApplicationInhibitFlags.html
 https://docs.gtk.org/gtk4/flags.BuilderClosureFlags.html
@@ -5333,6 +5360,7 @@ https://docs.gtk.org/gtk4/flags.PrintCapabilities.html
 https://docs.gtk.org/gtk4/flags.ShortcutActionFlags.html
 https://docs.gtk.org/gtk4/flags.StateFlags.html
 https://docs.gtk.org/gtk4/flags.StyleContextPrintFlags.html
+https://docs.gtk.org/gtk4/flags.SvgFeatures.html
 https://docs.gtk.org/gtk4/flags.TextBufferNotifyFlags.html
 https://docs.gtk.org/gtk4/flags.TextSearchFlags.html
 https://docs.gtk.org/gtk4/flags.TreeModelFlags.html
@@ -5344,6 +5372,7 @@ https://docs.gtk.org/gtk4/error.FileChooserError.html
 https://docs.gtk.org/gtk4/error.IconThemeError.html
 https://docs.gtk.org/gtk4/error.PrintError.html
 https://docs.gtk.org/gtk4/error.RecentManagerError.html
+https://docs.gtk.org/gtk4/error.SvgError.html
 https://docs.gtk.org/gtk4/callback.AssistantPageFunc.html
 https://docs.gtk.org/gtk4/callback.CellAllocCallback.html
 https://docs.gtk.org/gtk4/callback.CellCallback.html
@@ -5391,6 +5420,7 @@ https://docs.gtk.org/gtk4/callback.TreeViewMappingFunc.html
 https://docs.gtk.org/gtk4/callback.TreeViewRowSeparatorFunc.html
 https://docs.gtk.org/gtk4/callback.TreeViewSearchEqualFunc.html
 https://docs.gtk.org/gtk4/callback.WidgetActionActivateFunc.html
+https://docs.gtk.org/gtk4/func.accelerator_get_accessible_label.html
 https://docs.gtk.org/gtk4/func.accelerator_get_default_mod_mask.html
 https://docs.gtk.org/gtk4/func.accelerator_get_label.html
 https://docs.gtk.org/gtk4/func.accelerator_get_label_with_keycode.html
@@ -5402,6 +5432,7 @@ https://docs.gtk.org/gtk4/func.accelerator_valid.html
 https://docs.gtk.org/gtk4/func.check_version.html
 https://docs.gtk.org/gtk4/func.css_parser_error_quark.html
 https://docs.gtk.org/gtk4/func.css_parser_warning_quark.html
+https://docs.gtk.org/gtk4/func.disable_portal_interfaces.html
 https://docs.gtk.org/gtk4/func.disable_portals.html
 https://docs.gtk.org/gtk4/func.disable_setlocale.html
 https://docs.gtk.org/gtk4/func.distribute_natural_allocation.html
@@ -5566,6 +5597,7 @@ https://docs.gtk.org/gtk4/const.STYLE_PROVIDER_PRIORITY_FALLBACK.html
 https://docs.gtk.org/gtk4/const.STYLE_PROVIDER_PRIORITY_SETTINGS.html
 https://docs.gtk.org/gtk4/const.STYLE_PROVIDER_PRIORITY_THEME.html
 https://docs.gtk.org/gtk4/const.STYLE_PROVIDER_PRIORITY_USER.html
+https://docs.gtk.org/gtk4/const.SVG_DEFAULT_FEATURES.html
 https://docs.gtk.org/gtk4/const.TEXT_VIEW_PRIORITY_VALIDATE.html
 https://docs.gtk.org/gtk4/const.TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID.html
 https://docs.gtk.org/gtk4/const.TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID.html
@@ -5621,6 +5653,7 @@ https://docs.gtk.org/Pango/enum.BidiType.html
 https://docs.gtk.org/Pango/enum.CoverageLevel.html
 https://docs.gtk.org/Pango/enum.Direction.html
 https://docs.gtk.org/Pango/enum.EllipsizeMode.html
+https://docs.gtk.org/Pango/enum.FontColor.html
 https://docs.gtk.org/Pango/enum.FontScale.html
 https://docs.gtk.org/Pango/enum.Gravity.html
 https://docs.gtk.org/Pango/enum.GravityHint.html
