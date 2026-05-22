@@ -43,6 +43,11 @@ def insert(db, name, path, type="func"):
     cursor = db.cursor()
     cursor.execute("INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?);", (name, type, path))
 
+def lines_from_url(url):
+    print(f"Parsing {url}...")
+    text = rs.get(url).text
+    return text.splitlines()
+
 def soup_from_file(fname):
     print(f"Parsing {fname}...")
     text = Path(fname).read_text("utf-8")
