@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 ROOT_DIR="$(pwd)"
+FAIL_FILE="$ROOT_DIR/download.fail"
+truncate -s0 "$FAIL_FILE"
 download () {
     NUM="$1"
     URL="$2"
@@ -23,5 +25,6 @@ for DIRECTORY; do
     cd "$ROOT_DIR/$DIRECTORY/Contents/Resources"
     test -f URLS || continue
     mkdir -p Documents
-    cat URLS | sort -R | parallel -j8 --halt now,fail=1 download {#} {}
+    cat URLS | sort -R | parallel -j8 --halt now,fail=1 download {#} {} || echo "$DIRECTORY" >> "$FAIL_FILE"
 done
+echo; sed 's/^/DOWNLOAD FAILED FOR /' "$FAIL_FILE"

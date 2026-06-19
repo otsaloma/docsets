@@ -1,13 +1,12 @@
 #!/bin/bash
 set -e
-FAILED=""
 ROOT_DIR="$(pwd)"
+FAIL_FILE="$ROOT_DIR/index.fail"
+truncate -s0 "$FAIL_FILE"
 export PYTHONPATH=$ROOT_DIR:$PYTHONPATH
 for DIRECTORY; do
     echo "Entering $DIRECTORY..."
     cd "$ROOT_DIR/$DIRECTORY/Contents/Resources"
-    ./index.py || FAILED="$FAILED $DIRECTORY"
+    ./index.py || echo "$DIRECTORY" >> "$FAIL_FILE"
 done
-for DIRECTORY in $FAILED; do
-    echo "INDEX FAILED FOR $DIRECTORY"
-done
+echo; sed 's/^/INDEX FAILED FOR /' "$FAIL_FILE"

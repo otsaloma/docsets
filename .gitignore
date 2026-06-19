@@ -1,3 +1,4 @@
+*.fail
 */Contents/Resources/docSet.dsidx
 */Contents/Resources/Documents
 __pycache__
