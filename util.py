@@ -45,8 +45,9 @@ def insert(db, name, path, type="func"):
 
 def lines_from_url(url):
     print(f"Parsing {url}...")
-    text = rs.get(url).text
-    return text.splitlines()
+    response = rs.get(url)
+    response.raise_for_status()
+    return response.text.splitlines()
 
 def soup_from_file(fname):
     print(f"Parsing {fname}...")
@@ -55,8 +56,9 @@ def soup_from_file(fname):
 
 def soup_from_url(url):
     print(f"Parsing {url}...")
-    text = rs.get(url).text
-    return bs4.BeautifulSoup(text, "html.parser")
+    response = rs.get(url)
+    response.raise_for_status()
+    return bs4.BeautifulSoup(response.text, "html.parser")
 
 def soups_from_files(pattern):
     return map(soup_from_file, glob.glob(pattern))
