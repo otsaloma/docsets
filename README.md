@@ -1,5 +1,4 @@
-Scripts to Generate Dash Docsets
-================================
+# Scripts to Generate Dash Docsets
 
 This is a collection of scripts to download and index various
 documentation to the [Dash][] docset format. Results have been tested to
@@ -11,6 +10,6 @@ applications that support the docset format.
 
 To generate a docset, e.g. Python, run the following command.
 
-    ./update.sh Python.docset
+    PYTHONPATH=. ./update.sh Python.docset
 
 To generate all docsets, use `*.docset` as the argument above.
