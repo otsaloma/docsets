@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 
-import re
 import util
 
 db = util.create_database()
-root = "https://docs.djangoproject.com/en/4.0/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select(".index dt > a"):
-        href = tag.attrs["href"]
-        href = re.sub("^../", "", href)
-        name = href.split("#")[-1]
+        name = tag.attrs["href"].split("#")[-1]
         if not name.startswith("django."): continue
-        path = root + href
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

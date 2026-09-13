@@ -3,10 +3,9 @@
 import util
 
 db = util.create_database()
-root = "https://www.postgresql.org/docs/current/static/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('a[href^="queries-"], a[href^="sql-"]'):
         name = tag.text
         if not name.isupper(): continue
-        path = root + tag.attrs["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

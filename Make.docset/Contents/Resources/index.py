@@ -3,10 +3,9 @@
 import util
 
 db = util.create_database()
-root = "https://www.gnu.org/software/make/manual/html_node/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('a[href*="#index-"]'):
         name = tag.text
         if " " in name: continue
-        path = root + tag.attrs["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

@@ -7,6 +7,7 @@ import glob
 import hashlib
 import requests
 import sqlite3
+import urllib.parse
 
 from pathlib import Path
 
@@ -49,6 +50,10 @@ def lines_from_url(url):
     response.raise_for_status()
     return response.text.splitlines()
 
+def pages():
+    for fname in glob.glob("Documents/*.html"):
+        yield url_from_filename(fname), soup_from_file(fname)
+
 def soup_from_file(fname):
     print(f"Parsing {fname}...")
     text = Path(fname).read_text("utf-8")
@@ -60,10 +65,10 @@ def soup_from_url(url):
     response.raise_for_status()
     return bs4.BeautifulSoup(response.text, "html.parser")
 
-def soups_from_files(pattern):
-    return map(soup_from_file, glob.glob(pattern))
-
 def url_from_filename(html_path):
     hash = Path(html_path).stem
     urls_path = Path(html_path).parent.parent / "URLS"
     return hash_urls_reverse_map(urls_path)[hash]
+
+def urljoin(url, href):
+    return urllib.parse.urljoin(url, href)

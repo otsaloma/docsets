@@ -3,9 +3,8 @@
 import util
 
 db = util.create_database()
-root = "https://requests.readthedocs.io/en/latest/api/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('dt[id^="requests."]'):
         name = tag.attrs["id"]
-        path = "#".join((root, name))
+        path = util.urljoin(url, "#" + name)
         util.insert(db, name, path)

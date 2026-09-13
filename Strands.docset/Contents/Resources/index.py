@@ -2,13 +2,9 @@
 
 import util
 
-from pathlib import Path
-
 db = util.create_database()
-for path in Path("Documents").glob("*.html"):
-    url = util.url_from_filename(path)
-    soup = util.soup_from_file(path)
+for url, soup in util.pages():
     for tag in soup.select("a.sl-anchor-link"):
         name = tag.previous_sibling.text
-        path = url + tag.attrs["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

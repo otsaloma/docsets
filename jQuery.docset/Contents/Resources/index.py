@@ -3,9 +3,9 @@
 import util
 
 db = util.create_database()
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('a[rel="bookmark"]'):
         name = tag.text
         if " " in name: continue
-        path = "http:" + tag["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

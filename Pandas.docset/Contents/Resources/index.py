@@ -3,9 +3,8 @@
 import util
 
 db = util.create_database()
-root = "https://pandas.pydata.org/docs/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('a[href^="reference/api/"]'):
         name = tag.attrs["href"].split("#")[-1]
-        path = root + tag.attrs["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)

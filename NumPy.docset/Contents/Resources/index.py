@@ -3,10 +3,9 @@
 import util
 
 db = util.create_database()
-root = "https://numpy.org/doc/stable/"
-for soup in util.soups_from_files("Documents/*.html"):
+for url, soup in util.pages():
     for tag in soup.select('a[href^="reference/generated/"]'):
         name = tag.attrs["href"].split("#")[-1]
         name = name.replace("module-", "")
-        path = root + tag.attrs["href"]
+        path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)
