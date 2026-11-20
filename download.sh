@@ -13,7 +13,7 @@ download () {
          --max-time 30 \
          --output Documents/$HASH.html \
          --silent \
-         --user-agent "Mozilla/5.0 Gecko/20100101 Firefox/134.0" \
+         --user-agent "Mozilla/5.0 Gecko/20100101 Firefox/160.0" \
          "$URL"
 
     test -s Documents/$HASH.html
