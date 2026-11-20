@@ -3,7 +3,6 @@
 import atexit
 import bs4
 import functools
-import glob
 import hashlib
 import requests
 import sqlite3
@@ -51,7 +50,7 @@ def lines_from_url(url):
     return response.text.splitlines()
 
 def pages():
-    for fname in glob.glob("Documents/*.html"):
+    for fname in Path("Documents").glob("*.html"):
         yield url_from_filename(fname), soup_from_file(fname)
 
 def soup_from_file(fname):
