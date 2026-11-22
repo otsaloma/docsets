@@ -7,6 +7,6 @@ export PYTHONPATH=$ROOT_DIR:$PYTHONPATH
 for DIRECTORY; do
     echo "Entering $DIRECTORY..."
     cd "$ROOT_DIR/$DIRECTORY/Contents/Resources"
-    ./index.py || echo "$DIRECTORY" >> "$FAIL_FILE"
+    ./index.py && test "$(sqlite3 docSet.dsidx "SELECT COUNT(*) FROM searchIndex")" -gt 0 || echo "$DIRECTORY" >> "$FAIL_FILE"
 done
 echo; sed 's/^/INDEX FAILED FOR /' "$FAIL_FILE"
