@@ -4,7 +4,7 @@ import util
 
 db = util.create_database()
 for url, soup in util.pages():
-    for tag in soup.select('.az a[href$=".html"]'):
+    for tag in soup.select('td:nth-of-type(2) > a[href$=".html"]'):
         name = tag.text
         path = util.urljoin(url, tag.attrs["href"])
         util.insert(db, name, path)
